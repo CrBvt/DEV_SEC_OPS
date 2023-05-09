@@ -1,2 +1,3 @@
 django_node/data/*
 .idea
+.pytest_cache
