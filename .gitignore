@@ -1,3 +1,4 @@
-django_node/data/*
+data/*
 .idea
 .pytest_cache
+./data/*
