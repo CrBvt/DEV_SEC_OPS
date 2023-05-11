@@ -11,10 +11,10 @@ COPY requirements.txt /code/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-ENV POSTGRES_NAME=postgres
-ENV POSTGRES_USER=postgres
-ENV POSTGRES_PASSWORD=postgres
-
 COPY . /code/
+
+#ENV POSTGRES_NAME=postgres
+#ENV POSTGRES_USER=postgres
+#ENV POSTGRES_PASSWORD=postgres
 
 #CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -9,7 +9,7 @@ services:
     volumes:
       - ./app_db_node/db:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "5433:5433"
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -17,10 +17,10 @@ services:
 
   oidc_db:
     image: postgres
+    ports:
+      - "5432:5432"
     volumes:
       - ./kc_db_node/db:/var/lib/postgresql/data
-    ports:
-      - "5433:5432"
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -29,10 +29,15 @@ services:
   # ============================= OpenID Connect =============================
 
   oidc:
-    image: quay.io/keycloak/keycloak:21.1.1
+    build: keycloak_node
     ports:
       - "8080:8080"
-    command: start --hostname=oidc --http-enabled=true
+    command: start-dev --db-url="jdbc:postgresql://oidc_db:5432/postgres" --db-username=postgres --db-password=postgres
+    environment:
+#      - KC_HOSTNAME=oidc
+      - KC_DB=postgres
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
     depends_on:
       - oidc_db
 
@@ -45,6 +50,12 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+    environment:
+      - POSTGRES_HOST=app_db
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_PORT=5433
     depends_on:
       - app_db
       - oidc
