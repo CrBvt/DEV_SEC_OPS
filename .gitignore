@@ -1,4 +1,6 @@
 data/*
 .idea
 .pytest_cache
-./data/*
+app_db_node/db/*
+kc_db_node/db/*
+*.ignore

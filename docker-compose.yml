@@ -1,12 +1,43 @@
+version: '0.3'
+
 services:
-  db:
+
+# ============================= DATABASES =============================
+
+  app_db:
     image: postgres
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - ./app_db_node/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
+  oidc_db:
+    image: postgres
+    volumes:
+      - ./kc_db_node/db:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  # ============================= OpenID Connect =============================
+
+  oidc:
+    image: quay.io/keycloak/keycloak:21.1.1
+    ports:
+      - "8080:8080"
+    command: start --verbose
+    depends_on:
+      - oidc_db
+
+   # ============================= Web Front =============================
+
   web:
     build: django_node
     command: sh -c "pytest django_node/static_tests && python django_node/manage.py runserver 0.0.0.0:8000"
@@ -14,12 +45,13 @@ services:
       - .:/code
     ports:
       - "8000:8000"
-    environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
     depends_on:
-      - db
+      - app_db
+#      - oidc
+
+  # ============================= Back Engine =============================
+  #  app_engine:
+
 #  CALL DYNAMIC TEST FROM API
 #  dynamic_test:
 #    build: django_node
