@@ -32,7 +32,7 @@ services:
     image: quay.io/keycloak/keycloak:21.1.1
     ports:
       - "8080:8080"
-    command: start --verbose
+    command: start --hostname=oidc --http-enabled=true
     depends_on:
       - oidc_db
 
@@ -47,7 +47,7 @@ services:
       - "8000:8000"
     depends_on:
       - app_db
-#      - oidc
+      - oidc
 
   # ============================= Back Engine =============================
   #  app_engine:
