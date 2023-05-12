@@ -46,6 +46,7 @@ services:
   web:
     build: django_node
     command: sh -c "pytest django_node/static_tests && python django_node/manage.py runserver 0.0.0.0:8000"
+    restart: "on-failure"
     volumes:
       - .:/code
     ports:
