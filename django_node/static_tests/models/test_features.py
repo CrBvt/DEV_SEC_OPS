@@ -1,4 +1,4 @@
-from django_node.django_source.models.features import get_sum
+from django_node.web_app.models.features import get_sum
 
 def test_get_sum():
     assert (all([

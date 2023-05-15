@@ -13,8 +13,6 @@ RUN pip install -r requirements.txt
 
 COPY . /code/
 
-#ENV POSTGRES_NAME=postgres
-#ENV POSTGRES_USER=postgres
-#ENV POSTGRES_PASSWORD=postgres
+WORKDIR /code/django_node
 
 #CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
