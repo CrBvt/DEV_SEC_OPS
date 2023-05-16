@@ -1,7 +1,7 @@
-<html>
-<header><title>DEV_SEC_OPS</title></header>
-<body>
-<h1>WIP</h1>
-<p>Today is {{today}}</p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to DEV_SEC_OPS</h1>
+    <p> Today is {{today}}</p>
+    <a href="{% url 'notes.list' %}" class="btn btn-primary"> Check me out !</a>
+{% endblock %}

@@ -4,62 +4,67 @@ services:
 
 # ============================= DATABASES =============================
 
-  app_db:
+  django_db:
     image: postgres
     volumes:
       - ./app_db_node/db:/var/lib/postgresql/data
+    expose:
+      - "5433"
     ports:
-      - "5433:5433"
+      - "5433:5432"
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    command : -p 5433
 
-  oidc_db:
-    image: postgres
-    ports:
-      - "5432:5432"
-    volumes:
-      - ./kc_db_node/db:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+#  oidc_db:
+#    image: postgres
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - ./kc_db_node/db:/var/lib/postgresql/data
+#    environment:
+#      - POSTGRES_DB=postgres
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
 
   # ============================= OpenID Connect =============================
 
-  oidc:
-    build: keycloak_node
-    ports:
-      - "8080:8080"
-    command: start-dev --db-url="jdbc:postgresql://oidc_db:5432/postgres" --db-username=postgres --db-password=postgres
-    environment:
-#      - KC_HOSTNAME=oidc
-      - KC_DB=postgres
-      - KEYCLOAK_ADMIN=admin
-      - KEYCLOAK_ADMIN_PASSWORD=admin
-    depends_on:
-      - oidc_db
+#  oidc:
+#    build: keycloak_node
+#    ports:
+#      - "8080:8080"
+#    command: start-dev --db-url="jdbc:postgresql://oidc_db:5432/postgres" --db-username=postgres --db-password=postgres
+#    restart: "always"
+#    environment:
+##      - KC_HOSTNAME=oidc
+#      - KC_DB=postgres
+#      - KEYCLOAK_ADMIN=admin
+#      - KEYCLOAK_ADMIN_PASSWORD=admin
+#    depends_on:
+#      - oidc_db
 
    # ============================= Web Front =============================
 
-  web:
+  web_front_django:
     build: django_node
-    command: sh -c "pytest django_node/static_tests && python django_node/manage.py runserver 0.0.0.0:8000"
-    restart: "on-failure"
+#    command: sh -c "sleep 10 && pytest django_node/static_tests && python django_node/manage.py runserver 0.0.0.0:8000"
+    command: sh -c "sleep 15 && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    restart: "always"
     volumes:
       - .:/code
     ports:
       - "8000:8000"
     environment:
-      - POSTGRES_HOST=app_db
+      - POSTGRES_HOST=django_db
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_PORT=5433
     depends_on:
-      - app_db
-      - oidc
+      - django_db
+#      - oidc
 
   # ============================= Back Engine =============================
   #  app_engine:

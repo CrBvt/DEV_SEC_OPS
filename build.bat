@@ -1,1 +1,1 @@
-docker-compose up --build --exit-code-from web --abort-on-container-exit
+docker-compose up --build
