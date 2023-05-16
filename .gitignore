@@ -4,5 +4,6 @@
 db/
 migrations/
 venv/
+__pycache__/
 
 *.ignore
