@@ -6,6 +6,9 @@
 Welcome to WebNotes's documentation!
 ====================================
 
+.. automodule:: home.models
+.. automodule:: notes.models
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
