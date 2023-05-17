@@ -3,6 +3,7 @@ import pytest
 from django.contrib.auth.models import User
 
 from notes.models import Notes
+from notes.tests.factories import UserFactory
 
 @pytest.fixture
 def logged_user(client):
@@ -27,7 +28,7 @@ def test_list_endpoint_returns_user_notes(client, logged_user):
 @pytest.mark.django_db
 def test_list_endpoint_returns_only_user_notes_from_authenticated_user(client, logged_user):
 
-    another_user = User.objects.create_user('another_user', 'another@example.com', 'password')
+    another_user = UserFactory()
     Notes.objects.create(title='Fake Note', text='', user=another_user)
 
     Notes.objects.create(title='An interesting title', text='', user=logged_user)
