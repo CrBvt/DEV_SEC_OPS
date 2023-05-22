@@ -47,13 +47,16 @@
 </section>
 <section id="module-django_node.home.admin">
 <span id="django-node-home-admin-module"></span><h2>django_node.home.admin module<a class="headerlink" href="#module-django_node.home.admin" title="Permalink to this heading">¶</a></h2>
+<p>Home admin</p>
 </section>
 <section id="module-django_node.home.apps">
 <span id="django-node-home-apps-module"></span><h2>django_node.home.apps module<a class="headerlink" href="#module-django_node.home.apps" title="Permalink to this heading">¶</a></h2>
+<p>Home apps</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="django_node.home.apps.HomeConfig">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">django_node.home.apps.</span></span><span class="sig-name descname"><span class="pre">HomeConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.apps.HomeConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<p>Home config</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="django_node.home.apps.HomeConfig.default_auto_field">
 <span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#django_node.home.apps.HomeConfig.default_auto_field" title="Permalink to this definition">¶</a></dt>
@@ -69,19 +72,23 @@
 </section>
 <section id="module-django_node.home.models">
 <span id="django-node-home-models-module"></span><h2>django_node.home.models module<a class="headerlink" href="#module-django_node.home.models" title="Permalink to this heading">¶</a></h2>
+<p>Home models</p>
 </section>
 <section id="module-django_node.home.urls">
 <span id="django-node-home-urls-module"></span><h2>django_node.home.urls module<a class="headerlink" href="#module-django_node.home.urls" title="Permalink to this heading">¶</a></h2>
+<p>Home urls</p>
 </section>
 <section id="module-django_node.home.views">
 <span id="django-node-home-views-module"></span><h2>django_node.home.views module<a class="headerlink" href="#module-django_node.home.views" title="Permalink to this heading">¶</a></h2>
+<p>Home views</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="django_node.home.views.HomeView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">django_node.home.views.</span></span><span class="sig-name descname"><span class="pre">HomeView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.views.HomeView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateView</span></code></p>
+<p>Homepage View</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="django_node.home.views.HomeView.extra_context">
-<span class="sig-name descname"><span class="pre">extra_context</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'today':</span> <span class="pre">datetime.datetime(2023,</span> <span class="pre">5,</span> <span class="pre">17,</span> <span class="pre">16,</span> <span class="pre">8,</span> <span class="pre">51,</span> <span class="pre">894406)}</span></em><a class="headerlink" href="#django_node.home.views.HomeView.extra_context" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">extra_context</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'today':</span> <span class="pre">datetime.datetime(2023,</span> <span class="pre">5,</span> <span class="pre">22,</span> <span class="pre">10,</span> <span class="pre">1,</span> <span class="pre">17,</span> <span class="pre">492962)}</span></em><a class="headerlink" href="#django_node.home.views.HomeView.extra_context" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -95,6 +102,7 @@
 <dt class="sig sig-object py" id="django_node.home.views.LoginInterfaceView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">django_node.home.views.</span></span><span class="sig-name descname"><span class="pre">LoginInterfaceView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.views.LoginInterfaceView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LoginView</span></code></p>
+<p>Login View</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="django_node.home.views.LoginInterfaceView.template_name">
 <span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'home/login.html'</span></em><a class="headerlink" href="#django_node.home.views.LoginInterfaceView.template_name" title="Permalink to this definition">¶</a></dt>
@@ -106,6 +114,7 @@
 <dt class="sig sig-object py" id="django_node.home.views.LogoutInterfaceView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">django_node.home.views.</span></span><span class="sig-name descname"><span class="pre">LogoutInterfaceView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.views.LogoutInterfaceView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LogoutView</span></code></p>
+<p>Logout View</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="django_node.home.views.LogoutInterfaceView.template_name">
 <span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'home/logout.html'</span></em><a class="headerlink" href="#django_node.home.views.LogoutInterfaceView.template_name" title="Permalink to this definition">¶</a></dt>
@@ -117,6 +126,7 @@
 <dt class="sig sig-object py" id="django_node.home.views.SignupView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">django_node.home.views.</span></span><span class="sig-name descname"><span class="pre">SignupView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.views.SignupView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CreateView</span></code></p>
+<p>Sign-up View</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="django_node.home.views.SignupView.form_class">
 <span class="sig-name descname"><span class="pre">form_class</span></span><a class="headerlink" href="#django_node.home.views.SignupView.form_class" title="Permalink to this definition">¶</a></dt>
@@ -144,6 +154,7 @@
 </section>
 <section id="module-django_node.home">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-django_node.home" title="Permalink to this heading">¶</a></h2>
+<p>Home App</p>
 </section>
 </section>
 

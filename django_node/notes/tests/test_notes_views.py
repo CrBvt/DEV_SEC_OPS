@@ -1,19 +1,21 @@
 import pytest
 
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
-from notes.models import Notes
+# from notes.models import Notes
 from notes.tests.factories import UserFactory, NoteFactory
 
 @pytest.fixture
 def logged_user(client):
+    """ Provides an authenticated user fixture """
     user = UserFactory()
     client.login(username=user.username, password='password')
 
     return user
 
 @pytest.mark.django_db
-def test_list_endpoint_returns_user_notes(client, logged_user):
+def test_list_endpoint_authenticated(client, logged_user):
+    """ Accessing the /smart/notes endpoint with an authenticated user returns its notes """
 
     note_1 = NoteFactory(user=logged_user)
     note_2 = NoteFactory(user=logged_user)
@@ -26,7 +28,8 @@ def test_list_endpoint_returns_user_notes(client, logged_user):
     assert 2 == content.count('<h3>')
 
 @pytest.mark.django_db
-def test_list_endpoint_returns_only_user_notes_from_authenticated_user(client, logged_user):
+def test_list_endpoint_user_notes_only(client, logged_user):
+    """ Accessing the /smart/notes endpoint with an authenticated user returns its notes and not another user's note """
 
     note_user_1 = NoteFactory(user=logged_user)
     note_user_2 = NoteFactory(user=logged_user)
@@ -44,3 +47,21 @@ def test_list_endpoint_returns_only_user_notes_from_authenticated_user(client, l
     assert 2 == content.count('<h3>')
 
     assert note_another_user.title not in content
+
+
+@pytest.mark.django_db
+def test_create_endpoint_authenticated(client, logged_user):
+    """ Posting a   matching form data to the /smart/notes/new endpoint with an authenticated user
+    creates the note for the user """
+
+    form_data = {
+        'title': 'big title',
+        'text': 'big_text'
+    }
+
+    response = client.post('/smart/notes/new', form_data, follow=True)
+
+    assert 200 == response.status_code
+    assert 'notes/notes_list.html' in response.template_name
+    assert 1 == logged_user.notes.count()
+    assert "big title" == logged_user.notes.first().title

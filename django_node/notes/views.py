@@ -1,3 +1,5 @@
+""" Notes views """
+
 from django.shortcuts import render
 from django.http import Http404
 from django.http.response import HttpResponseRedirect
@@ -9,26 +11,37 @@ from .models import Notes
 from .forms import NotesForm
 
 class NotesDeleteView(DeleteView):
+
+    """ Notes Delete View """
+
     model = Notes
     context_object_name = "note"
     success_url = '/smart/notes'
     template_name = 'notes/notes_delete.html'
 
-class NotesUpdateView(UpdateView):
+class NotesUpdateView(LoginRequiredMixin, UpdateView):
+
+    """ Notes Update View """
+
     model = Notes
     context_object_name = "note"
     success_url = '/smart/notes'
+    login_url = "/login"
     form_class = NotesForm
 
-class NotesCreateView(CreateView):
+class NotesCreateView(LoginRequiredMixin, CreateView):
+
+    """ Notes Create View """
+
     model = Notes
-    context_object_name = "note"
     success_url = '/smart/notes'
     form_class = NotesForm
+    login_url = "/login"
+    context_object_name = "note"
 
     def form_valid(self, form):
 
-        self.object = form.save(commit=False)
+        self.object = form.save(commit=False) # noqa
         self.object.user = self.request.user
         self.object.save()
 
@@ -36,6 +49,9 @@ class NotesCreateView(CreateView):
 
 
 class NotesListView(LoginRequiredMixin, ListView):
+
+    """ Notes List View """
+
     model = Notes
     context_object_name = 'note_list'
     login_url = '/login'
@@ -50,9 +66,10 @@ class NotesListView(LoginRequiredMixin, ListView):
 #     return render(request, 'notes/notes_list.html', {'note_list': note_list})
 
 
-class NotesDetailView(DetailView):
+class NotesDetailView(LoginRequiredMixin, DetailView):
     model = Notes
     context_object_name = 'note'
+    login_url = '/login'
     # template_name = 'notes/templates/note_detail.html'
 
 # def detail(request, pk):

@@ -36,22 +36,24 @@
 </section>
 <section id="module-django_node.home.tests.test_home_views">
 <span id="django-node-home-tests-test-home-views-module"></span><h2>django_node.home.tests.test_home_views module<a class="headerlink" href="#module-django_node.home.tests.test_home_views" title="Permalink to this heading">¶</a></h2>
+<p>Tests for Home app</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="django_node.home.tests.test_home_views.test_home_endpoint_returns_welcome_page">
-<span class="sig-prename descclassname"><span class="pre">django_node.home.tests.test_home_views.</span></span><span class="sig-name descname"><span class="pre">test_home_endpoint_returns_welcome_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.tests.test_home_views.test_home_endpoint_returns_welcome_page" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="django_node.home.tests.test_home_views.test_signup_endpoint_redirects_authenticated_user">
-<span class="sig-prename descclassname"><span class="pre">django_node.home.tests.test_home_views.</span></span><span class="sig-name descname"><span class="pre">test_signup_endpoint_redirects_authenticated_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.tests.test_home_views.test_signup_endpoint_redirects_authenticated_user" title="Permalink to this definition">¶</a></dt>
-<dd><p>When a user is authenticated and try to access the sign-yp page,
-they are redirected to the list of their Notes</p>
+<dt class="sig sig-object py" id="django_node.home.tests.test_home_views.test_home_endpoint">
+<span class="sig-prename descclassname"><span class="pre">django_node.home.tests.test_home_views.</span></span><span class="sig-name descname"><span class="pre">test_home_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.tests.test_home_views.test_home_endpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessing the /home endpoint returns the welcome.html page</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="django_node.home.tests.test_home_views.test_signup_endpoint_returns_form_for_unauthenticated_user">
-<span class="sig-prename descclassname"><span class="pre">django_node.home.tests.test_home_views.</span></span><span class="sig-name descname"><span class="pre">test_signup_endpoint_returns_form_for_unauthenticated_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.tests.test_home_views.test_signup_endpoint_returns_form_for_unauthenticated_user" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="django_node.home.tests.test_home_views.test_signup_endpoint_authenticated">
+<span class="sig-prename descclassname"><span class="pre">django_node.home.tests.test_home_views.</span></span><span class="sig-name descname"><span class="pre">test_signup_endpoint_authenticated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.tests.test_home_views.test_signup_endpoint_authenticated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessing the /signup endpoint with an authenticated user redirects to its dashboard</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="django_node.home.tests.test_home_views.test_signup_endpoint_unauthenticated">
+<span class="sig-prename descclassname"><span class="pre">django_node.home.tests.test_home_views.</span></span><span class="sig-name descname"><span class="pre">test_signup_endpoint_unauthenticated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#django_node.home.tests.test_home_views.test_signup_endpoint_unauthenticated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessing the /signup endpoint with an unauthenticated user returns form for signing-up</p>
+</dd></dl>
 
 </section>
 <section id="module-django_node.home.tests">

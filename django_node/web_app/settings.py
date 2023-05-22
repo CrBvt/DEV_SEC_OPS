@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
-import sys
+# import sys
 
 from pathlib import Path
 
@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # APPS
-
     'home',
     'notes',
 ]
@@ -101,34 +101,7 @@ DATABASES = {
     }
 }
 
-# AUTH_SERVER_ROOT = 'http://oidc:8080/auth'  # L'URL de votre Keycloak
-# OIDC_RP_CLIENT_ID = "django_client"  # L'ID de votre client dans Keycloak
-# OIDC_RP_CLIENT_SECRET = "ZUGw40WxeKqBG16kxx9UalgeKecgx7jW"  # Le secret d'authentification de votre client pour la connexion
-# KEYCLOAK_REALM = 'dev_sec_ops'
-# KEYCLOAK_CLIENT_PUBLIC_KEY = """-----BEGIN PUBLIC KEY-----
-# MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy/63fMsGM2RD9waqvfBbxJxiHY8q4HMulD+QxjVDSsuWMKdaBZvwLRf0/qwr9jhXG+wNcuq7p0dxumo9VW0tkPmmhJh9Y5RVHImz8gnzRCWIBWM5evyav+ipDZEEq6BUQ0CSwUU8cz5LeD6YXt+9LH2AmEcoGhppU3w7LpvTyoawJ01RV7yLbQBC1CH2Yx78Vb0OcayFZPB4EmswNEimbxjh4F41lu9j1KP441lZewefriiCV2Rs2Li7FdGRFb4qTC30TE9IKV+BpjTRtuP1aVbqPPa3p5jFNAd3cVahvxb+3KSo3O8DtJNmr1ejWljU4Mfg6eSWWGMEbH60au9/UQIDAQAB
-# -----END PUBLIC KEY-----"""
-
-# Excempt list - URL paths that doesn't need Keycloak Authorization
-# KEYCLOAK_BEARER_AUTHENTICATION_EXEMPT_PATHS = [
-#     'admin', 'accounts',
-#     ]
-
 CONFIG_DIR = f"{BASE_DIR}/config/"
-
-#
-# KEYCLOAK_CONFIG = {
-#     'KEYCLOAK_REALM': os.environ.get('KEYCLOAK_REALM'),
-#     'KEYCLOAK_CLIENT_ID': os.environ.get('OIDC_RP_CLIENT_ID'),
-#     'KEYCLOAK_DEFAULT_ACCESS': 'ALLOW', # DENY or ALLOW
-#     'KEYCLOAK_AUTHORIZATION_CONFIG': os.path.join(CONFIG_DIR, 'authorization-config.json'),
-#     'KEYCLOAK_METHOD_VALIDATE_TOKEN': 'DECODE',
-#     'KEYCLOAK_SERVER_URL': os.environ.get('AUTH_SERVER_ROOT'),
-#     'KEYCLOAK_CLIENT_SECRET_KEY': os.environ.get('OIDC_RP_CLIENT_SECRET'),
-#     'KEYCLOAK_CLIENT_PUBLIC_KEY': KEYCLOAK_CLIENT_PUBLIC_KEY,
-# }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -174,4 +147,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL='/smart/notes'
+LOGIN_REDIRECT_URL = '/smart/notes'
