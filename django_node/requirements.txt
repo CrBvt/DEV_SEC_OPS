@@ -5,3 +5,5 @@ pytest-django==4.5.2
 python-keycloak==2.16.2
 djangorestframework==3.14.0
 factory-boy==3.2.1
+pylint==2.17.4
+sphinx-rtd-theme==1.2.0
