@@ -10,7 +10,6 @@
 
 ## Python Libraries
 
----
 ![Python-Lib](https://img.shields.io/badge/Pytest_Django-v4.5-orange?style=for-the-badge&logo=pytest) ![Python-Lib](https://img.shields.io/badge/Factory_Boy-v3.2-orange?style=for-the-badge&logo=)
 ![Python-Lib](https://img.shields.io/badge/Sphinx-v6.2-blueviolet?style=for-the-badge&logo=readthedocs) ![Python-Lib](https://img.shields.io/badge/Pylint-v2.17-lightgrey?style=for-the-badge&logo=)
 
