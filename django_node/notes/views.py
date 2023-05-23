@@ -1,17 +1,18 @@
 """ Notes views """
 
-from django.shortcuts import render
-from django.http import Http404
+# from django.shortcuts import render
+# from django.http import Http404
 from django.http.response import HttpResponseRedirect
 from django.views.generic import DetailView, ListView, CreateView, UpdateView
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import Notes
+# from .models import Notes
+from django_node.notes.models import Notes
 from .forms import NotesForm
 
-class NotesDeleteView(DeleteView):
 
+class NotesDeleteView(DeleteView):
     """ Notes Delete View """
 
     model = Notes
@@ -19,8 +20,8 @@ class NotesDeleteView(DeleteView):
     success_url = '/smart/notes'
     template_name = 'notes/notes_delete.html'
 
-class NotesUpdateView(LoginRequiredMixin, UpdateView):
 
+class NotesUpdateView(LoginRequiredMixin, UpdateView):
     """ Notes Update View """
 
     model = Notes
@@ -29,8 +30,8 @@ class NotesUpdateView(LoginRequiredMixin, UpdateView):
     login_url = "/login"
     form_class = NotesForm
 
-class NotesCreateView(LoginRequiredMixin, CreateView):
 
+class NotesCreateView(LoginRequiredMixin, CreateView):
     """ Notes Create View """
 
     model = Notes
@@ -40,8 +41,7 @@ class NotesCreateView(LoginRequiredMixin, CreateView):
     context_object_name = "note"
 
     def form_valid(self, form):
-
-        self.object = form.save(commit=False) # noqa
+        self.object = form.save(commit=False)  # noqa
         self.object.user = self.request.user
         self.object.save()
 
@@ -49,7 +49,6 @@ class NotesCreateView(LoginRequiredMixin, CreateView):
 
 
 class NotesListView(LoginRequiredMixin, ListView):
-
     """ Notes List View """
 
     model = Notes
@@ -61,12 +60,15 @@ class NotesListView(LoginRequiredMixin, ListView):
 
     # template_name = 'notes/templates/note_list.html'
 
+
 # def list(request):
 #     note_list = Notes.objects.all()
 #     return render(request, 'notes/notes_list.html', {'note_list': note_list})
 
 
 class NotesDetailView(LoginRequiredMixin, DetailView):
+    """ Notes Detail View """
+
     model = Notes
     context_object_name = 'note'
     login_url = '/login'

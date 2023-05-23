@@ -1,14 +1,6 @@
 django\_node.web\_app package
 =============================
 
-Subpackages
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   django_node.web_app.models
-
 Submodules
 ----------
 

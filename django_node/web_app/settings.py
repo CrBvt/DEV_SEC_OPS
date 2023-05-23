@@ -30,6 +30,7 @@ SECRET_KEY = 'django-insecure-36fjz=v-5&a&*(aop^6cjd6m5a!$^xy)kl-7=2i7p$br1%7ydq
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
+SITE_ID = 1
 
 # Application definition
 
@@ -43,6 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # APPS
+    # 'home.apps.HomeConfig',
+    # 'notes.apps.NotesConfig',
+
     'home',
     'notes',
 ]

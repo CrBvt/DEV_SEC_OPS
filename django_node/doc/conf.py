@@ -1,12 +1,8 @@
 import os
 import sys
 import django
-from pathlib import Path
 
 sys.path.insert(0, os.path.abspath('..'))
-
-sys.path.append(str(Path(__file__).parent.parent.parent))
-
 os.environ['DJANGO_SETTINGS_MODULE'] = 'web_app.settings'
 django.setup()
 
@@ -28,19 +24,22 @@ release = '1.0'
 
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.imgmath',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon',
+    'djangodocs'
+    # 'sphinx.ext.doctest',
+    # 'sphinx.ext.todo',
+    # 'sphinx.ext.coverage',
+    # 'sphinx.ext.imgmath',
 ]
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'migrations']
 
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']

@@ -9,7 +9,6 @@ class Notes(models.Model):
     Notes
     """
 
-    app_label = 'notes'
     text = models.TextField()
     title = models.CharField(max_length=200)
     created = models.DateTimeField(auto_now_add=True)

@@ -1,3 +1,5 @@
+""" Notes tests """
+
 import pytest
 
 # from django.contrib.auth.models import User
@@ -7,7 +9,11 @@ from notes.tests.factories import UserFactory, NoteFactory
 
 @pytest.fixture
 def logged_user(client):
-    """ Provides an authenticated user fixture """
+    """
+    *TEST
+    Fixture that provides an authenticated user
+    :param client: pytest-django default client fixture
+    """
     user = UserFactory()
     client.login(username=user.username, password='password')
 
@@ -15,7 +21,12 @@ def logged_user(client):
 
 @pytest.mark.django_db
 def test_list_endpoint_authenticated(client, logged_user):
-    """ Accessing the /smart/notes endpoint with an authenticated user returns its notes """
+    """
+    *TEST
+    Accessing the /smart/notes endpoint with an authenticated user returns its notes
+    :param client: pytest-django default client fixture
+    :param logged_user: authenticated user fixture
+    """
 
     note_1 = NoteFactory(user=logged_user)
     note_2 = NoteFactory(user=logged_user)
@@ -29,7 +40,13 @@ def test_list_endpoint_authenticated(client, logged_user):
 
 @pytest.mark.django_db
 def test_list_endpoint_user_notes_only(client, logged_user):
-    """ Accessing the /smart/notes endpoint with an authenticated user returns its notes and not another user's note """
+    """
+    *TEST
+    Accessing the /smart/notes endpoint with an authenticated user returns its notes
+    and not another user's note
+    :param client: pytest-django default client fixture
+    :param logged_user: authenticated user fixture
+    """
 
     note_user_1 = NoteFactory(user=logged_user)
     note_user_2 = NoteFactory(user=logged_user)
@@ -51,8 +68,13 @@ def test_list_endpoint_user_notes_only(client, logged_user):
 
 @pytest.mark.django_db
 def test_create_endpoint_authenticated(client, logged_user):
-    """ Posting a   matching form data to the /smart/notes/new endpoint with an authenticated user
-    creates the note for the user """
+    """
+    *TEST
+    Posting a matching form data to the /smart/notes/new endpoint with an authenticated user
+    creates the note for the user
+    :param client: pytest-django default client fixture
+    :param logged_user: authenticated user fixture
+    """
 
     form_data = {
         'title': 'big title',

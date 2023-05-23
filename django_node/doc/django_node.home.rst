@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    django_node.home.migrations
+   django_node.home.tests
 
 Submodules
 ----------

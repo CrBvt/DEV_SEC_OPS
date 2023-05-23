@@ -3,8 +3,8 @@
 from django import forms
 # from django.core.exceptions import ValidationError
 
-from .models import Notes
-
+# from .models import Notes
+from django_node.notes.models import Notes
 
 class NotesForm(forms.ModelForm):
 
