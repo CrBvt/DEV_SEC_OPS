@@ -49,7 +49,8 @@ Tests are realised thanks to **pytest-django** and fixture are provided by **fac
 
 Each app of the django project contains its test folder with every test related to this app
 
-pytest-django provides easy testing through **assert** keyword aswell as default **client** fixture for django which allows operation on
+pytest-django provides easy testing through **assert** keyword as well as default **client** fixture for django which 
+allows operation on the django app such as reaching endpoint or sending request with very few code lines
 
 ## Documentation ![Python-Lib](https://img.shields.io/badge/Sphinx-v6.2-blueviolet?style=flat-square&logo=readthedocs)  
 
