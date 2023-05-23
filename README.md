@@ -4,7 +4,6 @@
 
 ## Project Technologies
 
----
 ![Python](https://img.shields.io/badge/Python-v3.9-brightgreen?style=for-the-badge&logo=Python)
 ![Django](https://img.shields.io/badge/Django-v4.2-red?style=for-the-badge&logo=Django)
 ![Docker](https://img.shields.io/badge/Docker-v4.19-blue?style=for-the-badge&logo=docker)  
@@ -17,19 +16,16 @@
 
 ## About
 
----
 Self-learning project on good practices in software development, deployment and securing  
 Featuring a trivial Django application operating in a Docker network
 
 
 ## Requirements
 
----
 - Docker
 
 ## Installation
 
----
 1. Download the latest relase : https://github.com/CrBvt/DEV_SEC_OPS/releases/latest
 2. Extract the archive  
 3. Use a terminal to move into the extracted directory  
@@ -38,7 +34,6 @@ Featuring a trivial Django application operating in a Docker network
 
 ## Evolution
 
----
 When the project is modified and features are added, the build script is a multistage operation that will operate :
 - Tests
 - Code quality check
@@ -51,7 +46,6 @@ This allows an easy tracking of project health after every modification and keep
 
 ## Tests ![Python-Lib](https://img.shields.io/badge/Pytest_Django-v4.5-orange?style=flat-square&logo=pytest) ![Python-Lib](https://img.shields.io/badge/Factory_Boy-v3.2-orange?style=flat-square&logo=)
 
----
 Tests are realised thanks to **pytest-django** and fixture are provided by **factory-boy**
 
 Each app of the django project contains its test folder with every test related to this app
@@ -60,7 +54,6 @@ pytest-django provides easy testing through **assert** keyword aswell as default
 
 ## Documentation ![Python-Lib](https://img.shields.io/badge/Sphinx-v6.2-blueviolet?style=flat-square&logo=readthedocs)  
 
----
 Documentation is generated with **sphinx**  
   
 It creates a read-the-doc like html tree which allows anyone to
@@ -73,7 +66,6 @@ Project documentation root folder is located at **django-node/doc**
 
 ## Code Quality ![Python-Lib](https://img.shields.io/badge/Pylint-v2.17-lightgrey?style=flat-square)
 
----
 Quality of the code is evaluated by **pylint**  
 Settings of the linter is within **.pylintrc** at the project root
 
@@ -83,7 +75,6 @@ A note above 9/10 should be expected to maintain a reliable code quality
 
 ## Links
 
----
 
 - Sphinx documentation : https://www.sphinx-doc.org/en/master/ 
 - Sphinx Git : https://github.com/sphinx-doc/sphinx
