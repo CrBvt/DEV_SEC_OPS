@@ -6,8 +6,9 @@ services:
 
   django_db:
     image: postgres
+    container_name: django_db_node
     volumes:
-      - ./app_db_node/db:/var/lib/postgresql/data
+      - ./django_db_node/db:/var/lib/postgresql/data
     expose:
       - "5433"
     ports:
@@ -47,8 +48,9 @@ services:
 
    # ============================= Web Front =============================
 
-  web_front_django:
+  django_node:
     build: django_node
+    container_name: django_node
 #    command: sh -c "sleep 10 && pytest django_node/static_tests && python django_node/manage.py runserver 0.0.0.0:8000"
     command: sh -c "sleep 15 && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     restart: "always"
