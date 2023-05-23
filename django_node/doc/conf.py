@@ -1,10 +1,15 @@
 import os
 import sys
+from pathlib import Path
+
 import django
 
 sys.path.insert(0, os.path.abspath('..'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'web_app.settings'
 django.setup()
+
+sys.path.append(str(Path(__file__).parent.parent))
+sys.path.append(str(Path(__file__).parent.parent.parent))
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -26,7 +31,6 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
-    'djangodocs'
     # 'sphinx.ext.doctest',
     # 'sphinx.ext.todo',
     # 'sphinx.ext.coverage',

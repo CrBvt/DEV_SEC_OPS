@@ -79,7 +79,7 @@
 <div class="viewcode-block" id="logged_user"><a class="viewcode-back" href="../../../../django_node.notes.tests.html#django_node.notes.tests.test_notes_views.logged_user">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
 <span class="k">def</span> <span class="nf">logged_user</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    *TEST</span>
+<span class="sd">    *TEST*</span>
 <span class="sd">    Fixture that provides an authenticated user</span>
 <span class="sd">    :param client: pytest-django default client fixture</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -91,7 +91,7 @@
 <div class="viewcode-block" id="test_list_endpoint_authenticated"><a class="viewcode-back" href="../../../../django_node.notes.tests.html#django_node.notes.tests.test_notes_views.test_list_endpoint_authenticated">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
 <span class="k">def</span> <span class="nf">test_list_endpoint_authenticated</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">logged_user</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    *TEST</span>
+<span class="sd">    *TEST*</span>
 <span class="sd">    Accessing the /smart/notes endpoint with an authenticated user returns its notes</span>
 <span class="sd">    :param client: pytest-django default client fixture</span>
 <span class="sd">    :param logged_user: authenticated user fixture</span>
@@ -110,7 +110,7 @@
 <div class="viewcode-block" id="test_list_endpoint_user_notes_only"><a class="viewcode-back" href="../../../../django_node.notes.tests.html#django_node.notes.tests.test_notes_views.test_list_endpoint_user_notes_only">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
 <span class="k">def</span> <span class="nf">test_list_endpoint_user_notes_only</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">logged_user</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    *TEST</span>
+<span class="sd">    *TEST*</span>
 <span class="sd">    Accessing the /smart/notes endpoint with an authenticated user returns its notes</span>
 <span class="sd">    and not another user&#39;s note</span>
 <span class="sd">    :param client: pytest-django default client fixture</span>
@@ -138,7 +138,7 @@
 <div class="viewcode-block" id="test_create_endpoint_authenticated"><a class="viewcode-back" href="../../../../django_node.notes.tests.html#django_node.notes.tests.test_notes_views.test_create_endpoint_authenticated">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
 <span class="k">def</span> <span class="nf">test_create_endpoint_authenticated</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">logged_user</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    *TEST</span>
+<span class="sd">    *TEST*</span>
 <span class="sd">    Posting a matching form data to the /smart/notes/new endpoint with an authenticated user</span>
 <span class="sd">    creates the note for the user</span>
 <span class="sd">    :param client: pytest-django default client fixture</span>
