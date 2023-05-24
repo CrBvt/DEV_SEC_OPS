@@ -1,1 +1,1 @@
-""" Home App """
+""" Docs App """

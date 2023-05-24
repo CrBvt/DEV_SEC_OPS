@@ -1,18 +1,18 @@
-# Start Docker
+echo "Start Docker"
 docker-compose up --build -d
 
-# Wait for Docker
+echo "Wait for Docker"
 sleep 30
 
-# Migrations
+echo "Migrations"
 docker-compose exec django_node sh -c "python manage.py makemigrations"
 docker-compose exec django_node sh -c "python manage.py migrate"
 
-# Tests
+echo "Tests"
 docker exec django_node sh -c "pytest"
 
-# Code Quality
+echo "Code Quality"
 docker exec django_node sh -c "pylint"
 
-# Documentation
+echo "Documentation"
 docker exec django_node sh -c "cd doc && make html"

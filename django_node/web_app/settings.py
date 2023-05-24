@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     'home',
     'notes',
+    'docs',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/smart/notes'
+
+DOCS_ROOT = str(Path(f"{Path(__file__).parent.parent.absolute()}/docs/_build/html"))
+DOCS_ACCESS = 'public'

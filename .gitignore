@@ -6,3 +6,4 @@ migrations/
 venv/
 __pycache__/
 *.ignore
+todo

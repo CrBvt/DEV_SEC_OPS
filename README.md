@@ -29,19 +29,18 @@ Featuring a trivial Django application operating in a Docker network
 2. Extract the archive  
 3. Use a terminal to move into the extracted directory  
 4. Under Linux use : ```bash start.sh```  Under Windows use : ```start.bat```
-5. Django app is started on : http://localhost:8000/
+5. Tests, quality checks and documentation generation are executed on every start
+6. Django app is started on : http://localhost:8000/
 
 ## Evolution
 
-When the project is modified and features are added, the build script is a multistage operation that will operate :
+When the project is modified and features are added, the start script is a multistage operation that will operate :
 - Tests
 - Code quality check
 - Documentation generation
 
 
 This allows an easy tracking of project health after every modification and keeps the project documentation up-to-date
-
-~~Under Linux use : ```bash build.sh``` Under Windows use : ```build.bat```~~
 
 ## Tests ![Python-Lib](https://img.shields.io/badge/Pytest_Django-v4.5-orange?style=flat-square&logo=pytest) ![Python-Lib](https://img.shields.io/badge/Factory_Boy-v3.2-orange?style=flat-square&logo=)
 
@@ -59,7 +58,7 @@ Documentation is generated with **sphinx**
 It creates a read-the-doc like html tree which allows anyone to
 navigate the project source code and seek information through it  
 
-Documentation can be opened via local django_node/doc/_build/html/index.html file ~~or through the django app itself at /doc endpoint~~
+Documentation of the **django project** can be read within the app through the "Read The Docs" button 
 
 Project documentation root folder is located at **django-node/doc**
 
@@ -76,22 +75,14 @@ A note above 9/10 should be expected to maintain a reliable code quality
 ## Links
 
 
-- Sphinx documentation : https://www.sphinx-doc.org/en/master/ 
-- Sphinx Git : https://github.com/sphinx-doc/sphinx
+- Sphinx : https://www.sphinx-doc.org/en/master/
 
+- Pytest : https://readthedocs.org/projects/pytest/
 
-- Pytest documentation : https://readthedocs.org/projects/pytest/
-- Pytest Git : https://github.com/pytest-dev/pytest
+- Pytest-django : https://www.sphinx-doc.org/en/master/
 
- 
-- Pytest-django documentation : https://www.sphinx-doc.org/en/master/ 
-- Pytest-django Git : https://github.com/pytest-dev/pytest-django
+- Factory-boy : https://factoryboy.readthedocs.io/en/stable/
 
+- Pylint : https://pylint.readthedocs.io/en/latest/
 
-- Factory-boy documentation :https://factoryboy.readthedocs.io/en/stable/ 
-- Factory-boy Git : https://github.com/FactoryBoy/factory_boy
-
-
-
-- Pylint documentation : https://pylint.readthedocs.io/en/latest/
-- Pylint Git : https://github.com/pylint-dev/pylint
+- Django self-served doc : https://django-docs.readthedocs.io/en/latest/
