@@ -21,7 +21,7 @@ Featuring a trivial Django application operating in a Docker network
 
 ## Requirements
 
-- Docker
+- Docker v4.19
 
 ## Installation
 
