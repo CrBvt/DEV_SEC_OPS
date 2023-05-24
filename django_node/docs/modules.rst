@@ -1,7 +1,9 @@
-django_node
-===========
+DEV SEC OPS / django_node
+=============================
 
 .. toctree::
    :maxdepth: 4
 
-   django_node
+   home
+   notes
+   root_app

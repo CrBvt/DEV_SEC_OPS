@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>notes.views &mdash; DEV SEC OPS 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            DEV SEC OPS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">DEV SEC OPS / django_node</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">DEV SEC OPS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">notes.views</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for notes.views</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot; Notes views &quot;&quot;&quot;</span>
+
+<span class="c1"># from django.shortcuts import render</span>
+<span class="c1"># from django.http import Http404</span>
+<span class="kn">from</span> <span class="nn">django.http.response</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">DetailView</span><span class="p">,</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">,</span> <span class="n">UpdateView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.edit</span> <span class="kn">import</span> <span class="n">DeleteView</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.mixins</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Notes</span>
+<span class="c1"># from django_node.notes.models import Notes</span>
+<span class="kn">from</span> <span class="nn">.forms</span> <span class="kn">import</span> <span class="n">NotesForm</span>
+
+
+<div class="viewcode-block" id="NotesDeleteView"><a class="viewcode-back" href="../../notes.html#notes.views.NotesDeleteView">[docs]</a><span class="k">class</span> <span class="nc">NotesDeleteView</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Notes Delete View &quot;&quot;&quot;</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Notes</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;note&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="s1">&#39;/smart/notes&#39;</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;notes/notes_delete.html&#39;</span></div>
+
+
+<div class="viewcode-block" id="NotesUpdateView"><a class="viewcode-back" href="../../notes.html#notes.views.NotesUpdateView">[docs]</a><span class="k">class</span> <span class="nc">NotesUpdateView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Notes Update View &quot;&quot;&quot;</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Notes</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;note&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="s1">&#39;/smart/notes&#39;</span>
+    <span class="n">login_url</span> <span class="o">=</span> <span class="s2">&quot;/login&quot;</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">NotesForm</span></div>
+
+
+<div class="viewcode-block" id="NotesCreateView"><a class="viewcode-back" href="../../notes.html#notes.views.NotesCreateView">[docs]</a><span class="k">class</span> <span class="nc">NotesCreateView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Notes Create View &quot;&quot;&quot;</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Notes</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="s1">&#39;/smart/notes&#39;</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">NotesForm</span>
+    <span class="n">login_url</span> <span class="o">=</span> <span class="s2">&quot;/login&quot;</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;note&quot;</span>
+
+<div class="viewcode-block" id="NotesCreateView.form_valid"><a class="viewcode-back" href="../../notes.html#notes.views.NotesCreateView.form_valid">[docs]</a>    <span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># noqa</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_success_url</span><span class="p">())</span></div></div>
+
+
+<div class="viewcode-block" id="NotesListView"><a class="viewcode-back" href="../../notes.html#notes.views.NotesListView">[docs]</a><span class="k">class</span> <span class="nc">NotesListView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">ListView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Notes List View &quot;&quot;&quot;</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Notes</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s1">&#39;note_list&#39;</span>
+    <span class="n">login_url</span> <span class="o">=</span> <span class="s1">&#39;/login&#39;</span>
+
+<div class="viewcode-block" id="NotesListView.get_queryset"><a class="viewcode-back" href="../../notes.html#notes.views.NotesListView.get_queryset">[docs]</a>    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">all</span><span class="p">()</span></div></div>
+
+    <span class="c1"># template_name = &#39;notes/templates/note_list.html&#39;</span>
+
+
+<span class="c1"># def list(request):</span>
+<span class="c1">#     note_list = Notes.objects.all()</span>
+<span class="c1">#     return render(request, &#39;notes/notes_list.html&#39;, {&#39;note_list&#39;: note_list})</span>
+
+
+<div class="viewcode-block" id="NotesDetailView"><a class="viewcode-back" href="../../notes.html#notes.views.NotesDetailView">[docs]</a><span class="k">class</span> <span class="nc">NotesDetailView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">DetailView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Notes Detail View &quot;&quot;&quot;</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Notes</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s1">&#39;note&#39;</span>
+    <span class="n">login_url</span> <span class="o">=</span> <span class="s1">&#39;/login&#39;</span></div>
+    <span class="c1"># template_name = &#39;notes/templates/note_detail.html&#39;</span>
+
+<span class="c1"># def detail(request, pk):</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         note = Notes.objects.get(pk=pk)</span>
+<span class="c1">#     except Notes.DoesNotExist:</span>
+<span class="c1">#         raise Http404(&quot;Note doesn&#39;t exist&quot;)</span>
+<span class="c1">#</span>
+<span class="c1">#     return render(request, &#39;notes/note_details.html&#39;, {&#39;note&#39;: note})</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, CBE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

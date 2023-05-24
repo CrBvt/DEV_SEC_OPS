@@ -15,4 +15,4 @@ echo "Code Quality"
 docker exec django_node sh -c "pylint"
 
 echo "Documentation"
-docker exec django_node sh -c "cd doc && make html"
+docker exec django_node sh -c "cd docs && make clean && make html"

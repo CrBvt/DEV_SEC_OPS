@@ -5,7 +5,7 @@ from pathlib import Path
 import django
 
 sys.path.insert(0, os.path.abspath('..'))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'web_app.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'root_app.settings'
 django.setup()
 
 sys.path.append(str(Path(__file__).parent.parent))
@@ -19,7 +19,7 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'WebNotes'
+project = 'DEV SEC OPS'
 copyright = '2023, CBE'
 author = 'CBE'
 release = '1.0'
@@ -31,6 +31,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
+    'sphinx_rtd_theme',
     # 'sphinx.ext.doctest',
     # 'sphinx.ext.todo',
     # 'sphinx.ext.coverage',
