@@ -16,3 +16,5 @@ docker exec django_node sh -c "pylint ../django_node"
 
 REM Documentation
 docker exec django_node sh -c "cd docs && make clean && make html"
+
+pause
