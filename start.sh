@@ -17,4 +17,5 @@ docker exec django_node sh -c "pylint ../django_node"
 echo "Documentation"
 docker exec django_node sh -c "cd docs && make clean && make html"
 
+echo "Check me out : http://localhost:8000/"
 read -p "Press Enter to continue..."

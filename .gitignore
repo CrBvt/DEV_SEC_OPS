@@ -5,3 +5,4 @@ db/
 venv/
 __pycache__/
 *.ignore
+ignore.bat
