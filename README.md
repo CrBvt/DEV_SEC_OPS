@@ -15,7 +15,7 @@
 
 ## About
 
-Self-learning project on good practices in software development, deployment and securing  
+This is a self-learning project on good practices in software development, deployment and securing  
 Featuring a trivial Django application operating in a Docker network
 
 
@@ -25,11 +25,11 @@ Featuring a trivial Django application operating in a Docker network
 
 ## Installation
 
-1. Download the latest relase : https://github.com/CrBvt/DEV_SEC_OPS/releases/latest
+1. Download the latest release : https://github.com/CrBvt/DEV_SEC_OPS/releases/latest
 2. Extract the archive  
 3. Use a terminal to move into the extracted directory  
 4. Under Linux use : ```bash start.sh```  Under Windows use : ```start.bat```
-5. Tests, quality checks and documentation generation are executed on every start
+5. Tests, quality checks and documentation generation are executed after start
 6. Django app is started on : http://localhost:8000/
 
 ## Evolution
@@ -40,7 +40,7 @@ When the project is modified and features are added, the start script is a multi
 - Documentation generation
 
 
-This allows an easy tracking of project health after every modification and keeps the project documentation up-to-date
+This allows an easy tracking of project health after each modification and keeps the project documentation up-to-date
 
 ## Tests ![Python-Lib](https://img.shields.io/badge/Pytest_Django-v4.5-orange?style=flat-square&logo=pytest) ![Python-Lib](https://img.shields.io/badge/Factory_Boy-v3.2-orange?style=flat-square&logo=)
 
@@ -58,7 +58,8 @@ Documentation is generated with **sphinx**
 It creates a read-the-doc like html tree which allows anyone to
 navigate the project source code and seek information through it  
 
-Documentation of the **django project** can be read within the app through the "Read The Docs" button 
+Documentation of the **django project** can be read within the app through the "Read The Docs" button   
+It can also be opened manually at : ```django_node/docs/_build/html/index.html```
 
 Project documentation root folder is located at **django-node/doc**
 

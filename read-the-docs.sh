@@ -1,0 +1,1 @@
+xdg-open django_node/docs/_build/html/index.html
