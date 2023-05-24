@@ -31,6 +31,7 @@ Featuring a trivial Django application operating in a Docker network
 4. Under Linux use : ```bash start.sh```  Under Windows use : ```start.bat```
 5. Tests, quality checks and documentation generation are executed after start
 6. Django app is started on : http://localhost:8000/
+7. To stop this Docker network, use ```docker-compose down``` from the same directory
 
 ## Evolution
 
