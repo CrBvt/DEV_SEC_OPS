@@ -12,6 +12,7 @@ def logged_user(client):
     """
     *TEST*
     Fixture that provides an authenticated user
+
     :param client: pytest-django default client fixture
     """
     user = UserFactory()
@@ -24,6 +25,7 @@ def test_list_endpoint_authenticated(client, logged_user):
     """
     *TEST*
     Accessing the /smart/notes endpoint with an authenticated user returns its notes
+
     :param client: pytest-django default client fixture
     :param logged_user: authenticated user fixture
     """
@@ -44,6 +46,7 @@ def test_list_endpoint_user_notes_only(client, logged_user):
     *TEST*
     Accessing the /smart/notes endpoint with an authenticated user returns its notes
     and not another user's note
+
     :param client: pytest-django default client fixture
     :param logged_user: authenticated user fixture
     """
@@ -72,6 +75,7 @@ def test_create_endpoint_authenticated(client, logged_user):
     *TEST*
     Posting a matching form data to the /smart/notes/new endpoint with an authenticated user
     creates the note for the user
+
     :param client: pytest-django default client fixture
     :param logged_user: authenticated user fixture
     """

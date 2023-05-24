@@ -12,7 +12,7 @@ echo "Tests"
 docker exec django_node sh -c "pytest"
 
 echo "Code Quality"
-docker exec django_node sh -c "pylint"
+docker exec django_node sh -c "pylint ../django_node"
 
 echo "Documentation"
 docker exec django_node sh -c "cd docs && make clean && make html"

@@ -83,6 +83,7 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    *TEST*</span>
 <span class="sd">    Fixture that provides an authenticated user</span>
+
 <span class="sd">    :param client: pytest-django default client fixture</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">user</span> <span class="o">=</span> <span class="n">UserFactory</span><span class="p">()</span>
@@ -95,6 +96,7 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    *TEST*</span>
 <span class="sd">    Accessing the /smart/notes endpoint with an authenticated user returns its notes</span>
+
 <span class="sd">    :param client: pytest-django default client fixture</span>
 <span class="sd">    :param logged_user: authenticated user fixture</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -115,6 +117,7 @@
 <span class="sd">    *TEST*</span>
 <span class="sd">    Accessing the /smart/notes endpoint with an authenticated user returns its notes</span>
 <span class="sd">    and not another user&#39;s note</span>
+
 <span class="sd">    :param client: pytest-django default client fixture</span>
 <span class="sd">    :param logged_user: authenticated user fixture</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -143,6 +146,7 @@
 <span class="sd">    *TEST*</span>
 <span class="sd">    Posting a matching form data to the /smart/notes/new endpoint with an authenticated user</span>
 <span class="sd">    creates the note for the user</span>
+
 <span class="sd">    :param client: pytest-django default client fixture</span>
 <span class="sd">    :param logged_user: authenticated user fixture</span>
 <span class="sd">    &quot;&quot;&quot;</span>

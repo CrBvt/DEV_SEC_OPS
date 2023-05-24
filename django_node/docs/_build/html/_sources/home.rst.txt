@@ -7,7 +7,6 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   home.migrations
    home.tests
 
 Submodules

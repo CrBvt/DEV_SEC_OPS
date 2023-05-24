@@ -152,8 +152,12 @@
 <dt class="sig sig-object py" id="notes.tests.test_notes_views.logged_user">
 <span class="sig-prename descclassname"><span class="pre">notes.tests.test_notes_views.</span></span><span class="sig-name descname"><span class="pre">logged_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/notes/tests/test_notes_views.html#logged_user"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#notes.tests.test_notes_views.logged_user" title="Permalink to this definition"></a></dt>
 <dd><p><em>TEST</em>
-Fixture that provides an authenticated user
-:param client: pytest-django default client fixture</p>
+Fixture that provides an authenticated user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> – pytest-django default client fixture</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -161,18 +165,30 @@ Fixture that provides an authenticated user
 <span class="sig-prename descclassname"><span class="pre">notes.tests.test_notes_views.</span></span><span class="sig-name descname"><span class="pre">test_create_endpoint_authenticated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logged_user</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/notes/tests/test_notes_views.html#test_create_endpoint_authenticated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#notes.tests.test_notes_views.test_create_endpoint_authenticated" title="Permalink to this definition"></a></dt>
 <dd><p><em>TEST</em>
 Posting a matching form data to the /smart/notes/new endpoint with an authenticated user
-creates the note for the user
-:param client: pytest-django default client fixture
-:param logged_user: authenticated user fixture</p>
+creates the note for the user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – pytest-django default client fixture</p></li>
+<li><p><strong>logged_user</strong> – authenticated user fixture</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="notes.tests.test_notes_views.test_list_endpoint_authenticated">
 <span class="sig-prename descclassname"><span class="pre">notes.tests.test_notes_views.</span></span><span class="sig-name descname"><span class="pre">test_list_endpoint_authenticated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logged_user</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/notes/tests/test_notes_views.html#test_list_endpoint_authenticated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#notes.tests.test_notes_views.test_list_endpoint_authenticated" title="Permalink to this definition"></a></dt>
 <dd><p><em>TEST</em>
-Accessing the /smart/notes endpoint with an authenticated user returns its notes
-:param client: pytest-django default client fixture
-:param logged_user: authenticated user fixture</p>
+Accessing the /smart/notes endpoint with an authenticated user returns its notes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – pytest-django default client fixture</p></li>
+<li><p><strong>logged_user</strong> – authenticated user fixture</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -180,9 +196,15 @@ Accessing the /smart/notes endpoint with an authenticated user returns its notes
 <span class="sig-prename descclassname"><span class="pre">notes.tests.test_notes_views.</span></span><span class="sig-name descname"><span class="pre">test_list_endpoint_user_notes_only</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logged_user</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/notes/tests/test_notes_views.html#test_list_endpoint_user_notes_only"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#notes.tests.test_notes_views.test_list_endpoint_user_notes_only" title="Permalink to this definition"></a></dt>
 <dd><p><em>TEST</em>
 Accessing the /smart/notes endpoint with an authenticated user returns its notes
-and not another user’s note
-:param client: pytest-django default client fixture
-:param logged_user: authenticated user fixture</p>
+and not another user’s note</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – pytest-django default client fixture</p></li>
+<li><p><strong>logged_user</strong> – authenticated user fixture</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
