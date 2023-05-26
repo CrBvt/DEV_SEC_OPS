@@ -77,7 +77,8 @@
 
 
 <div class="viewcode-block" id="test_home_endpoint"><a class="viewcode-back" href="../../../home.tests.html#home.tests.test_home_views.test_home_endpoint">[docs]</a><span class="k">def</span> <span class="nf">test_home_endpoint</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;*TEST* Accessing the /home endpoint returns the welcome.html page</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;*TEST*</span>
+<span class="sd">    Accessing the /home endpoint returns the welcome.html page</span>
 
 <span class="sd">    :param client: pytest-django default client fixture</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -87,7 +88,8 @@
 
 
 <div class="viewcode-block" id="test_signup_endpoint_unauthenticated"><a class="viewcode-back" href="../../../home.tests.html#home.tests.test_home_views.test_signup_endpoint_unauthenticated">[docs]</a><span class="k">def</span> <span class="nf">test_signup_endpoint_unauthenticated</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;*TEST* Accessing the /signup endpoint with an unauthenticated user returns form for signing-up</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;*TEST*</span>
+<span class="sd">    Accessing the /signup endpoint with an unauthenticated user returns form for signing-up</span>
 
 <span class="sd">    :param client: pytest-django default client fixture</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -99,7 +101,8 @@
 
 <div class="viewcode-block" id="test_signup_endpoint_authenticated"><a class="viewcode-back" href="../../../home.tests.html#home.tests.test_home_views.test_signup_endpoint_authenticated">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
 <span class="k">def</span> <span class="nf">test_signup_endpoint_authenticated</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;*TEST* Accessing the /signup endpoint with an authenticated user redirects to its dashboard</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;*TEST*</span>
+<span class="sd">    Accessing the /signup endpoint with an authenticated user redirects to its dashboard</span>
 
 <span class="sd">    :param client: pytest-django default client fixture</span>
 <span class="sd">    &quot;&quot;&quot;</span>
