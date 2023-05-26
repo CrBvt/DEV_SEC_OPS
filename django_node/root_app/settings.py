@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # APPS
-    # 'home.apps.HomeConfig',
-    # 'notes.apps.NotesConfig',
 
     'home',
     'notes',

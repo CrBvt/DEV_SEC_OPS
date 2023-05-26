@@ -1,8 +1,11 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-    <h1>Welcome to Xl Tools ! </h1>
-    <h2>Testing API connection for {{engine_url}}:</h2>
-    <p>{{api_status}}</p>
+
+    <h1>Welcome to XL Tools ! </h1>
+    <h2>Testing API connection for : </h2>
+    <button class="btn btn-success" onclick="getMessage('http://{{ engine_url }}')">{{ engine_url }} :  {{ engine_status }}</button>
+
+    <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>
 
 {% endblock %}

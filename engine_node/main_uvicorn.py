@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    time.sleep(30)
+    time.sleep(3)
     return {"Status": "Operational"}
 
 
