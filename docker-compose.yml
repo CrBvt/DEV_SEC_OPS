@@ -48,6 +48,9 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_PORT=5433
+
+      - ENGINE_HOST=engine_node
+      - ENGINE_PORT=80
     depends_on:
       django_db:
         condition: service_healthy

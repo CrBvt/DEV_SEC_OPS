@@ -59,6 +59,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-home.models">home.models module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-home.urls">home.urls module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-home.views">home.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#home.views.AppMenuView"><code class="docutils literal notranslate"><span class="pre">AppMenuView</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#home.views.HomeView"><code class="docutils literal notranslate"><span class="pre">HomeView</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#home.views.LoginInterfaceView"><code class="docutils literal notranslate"><span class="pre">LoginInterfaceView</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#home.views.LogoutInterfaceView"><code class="docutils literal notranslate"><span class="pre">LogoutInterfaceView</span></code></a></li>
@@ -159,13 +160,30 @@
 <span id="home-views-module"></span><h2>home.views module<a class="headerlink" href="#module-home.views" title="Permalink to this heading"></a></h2>
 <p>Home views</p>
 <dl class="py class">
+<dt class="sig sig-object py" id="home.views.AppMenuView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">home.views.</span></span><span class="sig-name descname"><span class="pre">AppMenuView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/home/views.html#AppMenuView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#home.views.AppMenuView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LoginRequiredMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateView</span></code></p>
+<p>AppMenu View</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="home.views.AppMenuView.login_url">
+<span class="sig-name descname"><span class="pre">login_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/login'</span></em><a class="headerlink" href="#home.views.AppMenuView.login_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="home.views.AppMenuView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'home/app_menu.html'</span></em><a class="headerlink" href="#home.views.AppMenuView.template_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="home.views.HomeView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">home.views.</span></span><span class="sig-name descname"><span class="pre">HomeView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/home/views.html#HomeView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#home.views.HomeView" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateView</span></code></p>
 <p>Homepage View</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="home.views.HomeView.extra_context">
-<span class="sig-name descname"><span class="pre">extra_context</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'today':</span> <span class="pre">datetime.datetime(2023,</span> <span class="pre">5,</span> <span class="pre">26,</span> <span class="pre">8,</span> <span class="pre">38,</span> <span class="pre">57,</span> <span class="pre">498564)}</span></em><a class="headerlink" href="#home.views.HomeView.extra_context" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">extra_context</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'today':</span> <span class="pre">datetime.datetime(2023,</span> <span class="pre">5,</span> <span class="pre">26,</span> <span class="pre">9,</span> <span class="pre">39,</span> <span class="pre">28,</span> <span class="pre">807123)}</span></em><a class="headerlink" href="#home.views.HomeView.extra_context" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">

@@ -1,3 +1,5 @@
+import time
+
 from typing import Union
 
 from fastapi import FastAPI
@@ -7,7 +9,8 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    time.sleep(30)
+    return {"Status": "Operational"}
 
 
 @app.get("/items/{item_id}")

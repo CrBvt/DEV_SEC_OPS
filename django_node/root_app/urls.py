@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('smart/', include('notes.urls')),
     path('smart/docs/', include('docs.urls')),
+    path('xl_tools/', include('xl_tools.urls')),
 ]

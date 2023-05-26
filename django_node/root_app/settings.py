@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-36fjz=v-5&a&*(aop^6cjd6m5a!$^xy)kl-7=2i7p$br1%7ydq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1']
 SITE_ID = 1
 
 # Application definition
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'home',
     'notes',
     'docs',
+    'xl_tools',
 ]
 
 MIDDLEWARE = [
@@ -154,5 +155,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/smart/notes'
 
+# ==================== DOCS APP ====================
 DOCS_ROOT = str(Path(f"{Path(__file__).parent.parent.absolute()}/docs/_build/html"))
 DOCS_ACCESS = 'public'
+
+# ==================== XL_TOOLS APP ====================
+ENGINE_URL = f"{os.environ.get('ENGINE_HOST')}:{os.environ.get('ENGINE_PORT')}"
