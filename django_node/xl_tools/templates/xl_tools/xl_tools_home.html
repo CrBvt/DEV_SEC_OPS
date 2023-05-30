@@ -4,7 +4,11 @@
 
     <h1>Welcome to XL Tools ! </h1>
     <h2>Testing API connection for : </h2>
-    <button class="btn btn-success" onclick="getMessage('http://{{ engine_url }}')">{{ engine_url }} :  {{ engine_status }}</button>
+    <button id="engine_status"
+            class="btn btn-success"
+            onclick="getMessage('http://{{ engine_url }}', 'engine_status', 'Status', '{{ engine_url }} : ')">
+        {{ engine_url }} : {{ engine_status }}
+    </button>
 
     <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>
 

@@ -20,7 +20,6 @@ class XlToolsHomeView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print("SOMEONE IS USING ME")
         context.update({'engine_url': ENGINE_URL, 'engine_status': 'Unknown'})
         return context
 

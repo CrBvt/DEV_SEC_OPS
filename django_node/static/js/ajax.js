@@ -1,15 +1,26 @@
 //const getMessage = () => console.log("AAAA")
 
-async function getMessage(url) {
-    let response = await fetch('ajax', {
-        method: 'get',
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest',
-            'Content-Type': 'application/json',
-            'Target-Url': url
-        }
-    })
+async function getMessage(url, html_id, key, prefix) {
 
-//    let message = document.getElementById('engine_status')
-    {{ engine_status }} = await response.json()
+    try {
+            let response = await fetch('ajax', {
+            method: 'get',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/json',
+                'Target-Url': url
+            }
+        })
+
+
+        let json_response = await response.json()
+
+        let html_element = document.getElementById(html_id)
+        html_element.innerText = prefix + json_response[key]
+    }
+    catch{
+        let html_element = document.getElementById(html_id)
+        html_element.innerText = prefix + 'ERROR'
+    }
+
 }
