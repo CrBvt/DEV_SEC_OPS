@@ -56,6 +56,17 @@ services:
         condition: service_healthy
 #      - oidc
 
+    # ============================= Web Flask Front =============================
+
+  flask_node:
+    build: flask_node
+    container_name: flask_node
+    command: flask run
+    volumes:
+      - .:/code
+    ports:
+      - "5000:5000"
+
   # ============================= FastAPI Back Engine =============================
 
   engine_node:
