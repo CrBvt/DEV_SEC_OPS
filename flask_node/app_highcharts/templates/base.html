@@ -5,10 +5,12 @@
     </head>
 
     <nav class="navbar navbar-dark bg-dark">
-            <div class="ms-auto">
+            <div class="navbar-nav me-auto mb-2 mb-lg-0">
                 <a href="/home" class="btn btn-outline-light me-1" >
-                    <img src="https://i.imgur.com/jsHS4EM.png" alt="home"/>
+                    <img src="{{ url_for('static',filename='/home.svg')}}" alt="home" />
                 </a>
+            </div>
+            <div class="ms-auto">
                 {% for button in nav_bar_items %}
                     <a href="/charts/{{ button }}" class="btn btn-outline-light me-1">{{ button }}</a>
                 {% endfor %}

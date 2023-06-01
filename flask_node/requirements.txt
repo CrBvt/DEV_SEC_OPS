@@ -1,4 +1,6 @@
 flask==2.3.2
 python-dotenv==1.0.0
 highcharts-core==1.1.1
+highcharts-gantt==1.1.1
+highcharts-map==1.1.1
 pandas==2.0.2

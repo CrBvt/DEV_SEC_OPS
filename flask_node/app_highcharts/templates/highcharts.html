@@ -2,10 +2,23 @@
 
 {% block content %}
 
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        {% if load_map %}
+                <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+                <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+                <script src="https://code.highcharts.com/mapdata/index.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+                <script src="https://www.highcharts.com/samples/static/jquery.combobox.js"></script>
+        {% elif load_gantt %}
+                <script src="https://code.highcharts.com/gantt/highcharts-gantt.js"></script>
+                <script src="https://code.highcharts.com/gantt/modules/exporting.js"></script>
+                <script src="https://code.highcharts.com/gantt/modules/accessibility.js"></script>
+        {% else %}
+                <script src="https://code.highcharts.com/highcharts.js"></script>
+        {% endif %}
+
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
         <div id="{{ div_id }}" style="height:800px;"></div>
