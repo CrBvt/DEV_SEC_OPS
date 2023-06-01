@@ -1,8 +1,14 @@
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/series-label.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+{% extends 'base.html' %}
 
-<div id="{{ div_id }}" style="width:100%; height:400px;"></div>
-<script> {{ highcharts_js|safe }}</script>
+{% block content %}
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+        <div id="{{ div_id }}" style="height:800px;"></div>
+        <script id="chartScript"> {{ highcharts_js|safe }}</script>
+
+{% endblock %}

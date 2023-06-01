@@ -15,7 +15,7 @@ from highcharts_core.options.responsive import Responsive, ResponsiveRules, Cond
 from highcharts_core.constants import EnforcedNull
 
 
-def get_highcharts_basic_line(container_id=None, variable_name=None):
+def get_highcharts_basic_line(container):
 
     chart_options = HighchartsOptions(
         title=Title(
@@ -105,9 +105,9 @@ def get_highcharts_basic_line(container_id=None, variable_name=None):
     chart = Chart.from_options(
         chart_options,
         chart_kwargs={
-            'container': container_id,
-            'variable_name': variable_name
+            'container': container,
         }
+        # 'variable_name': variable_name
     )
 
     return chart
