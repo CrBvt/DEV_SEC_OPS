@@ -1,3 +1,4 @@
 flask==2.3.2
-flask-wtf==1.1.1
 python-dotenv==1.0.0
+highcharts-core==1.1.1
+pandas==2.0.2
