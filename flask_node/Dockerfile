@@ -14,3 +14,8 @@ RUN pip install -r requirements.txt
 COPY . /code/
 
 WORKDIR /code/flask_node
+
+#EXPOSE 5000
+#
+#RUN cd /code/flask_node
+#RUN flask run

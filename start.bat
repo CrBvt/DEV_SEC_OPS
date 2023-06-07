@@ -2,7 +2,7 @@ REM Start Docker
 docker-compose up --build -d
 
 REM Wait for Docker
-timeout 30
+REM timeout 30
 
 REM Migrations
 docker-compose exec django_node sh -c "python manage.py makemigrations"
