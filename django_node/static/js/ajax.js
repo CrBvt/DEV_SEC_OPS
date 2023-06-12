@@ -1,8 +1,12 @@
-//const getMessage = () => console.log("AAAA")
-
 async function getMessage(url, html_id, key, prefix) {
 
+    let html_element = document.getElementById(html_id)
+
+
     try {
+            html_element.style.backgroundColor = "blue"
+            html_element.innerText = prefix + 'loading...'
+
             let response = await fetch('ajax', {
             method: 'get',
             headers: {
@@ -15,11 +19,12 @@ async function getMessage(url, html_id, key, prefix) {
 
         let json_response = await response.json()
 
-        let html_element = document.getElementById(html_id)
         html_element.innerText = prefix + json_response[key]
+        html_element.style.backgroundColor = "green"
+
     }
     catch{
-        let html_element = document.getElementById(html_id)
+        html_element.style.backgroundColor = "red"
         html_element.innerText = prefix + 'ERROR'
     }
 
