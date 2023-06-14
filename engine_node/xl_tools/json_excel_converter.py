@@ -5,7 +5,6 @@ import xlsxwriter as xl
 import pandas as pd
 
 from io import BytesIO
-from pathlib import Path
 
 
 def recursive_flatten_json(json_data: dict or list, key_prefix=None, is_root=True):
@@ -85,8 +84,10 @@ def json_to_excel(
         return output_data_b64
 
 
-def excel_to_json(xl_file, output_path, encryption_password=None):
+def excel_to_json(xl_file, encryption_password=None):
     df_xl_data = pd.read_excel(xl_file)
+
+
 
 
 # for _json_sample in Path('tests/input_json').glob('*.json'):

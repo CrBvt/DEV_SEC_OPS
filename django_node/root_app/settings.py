@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'notes',
     'docs',
     'xl_tools',
+    'SWG_front',
 ]
 
 MIDDLEWARE = [

@@ -3,12 +3,20 @@
 {% block content %}
 
     <h1>Welcome to XL Tools ! </h1>
-    <h2>Testing API connection for : </h2>
-    <button id="engine_status"
-            class="btn btn-secondary"
-            onclick="getMessage('http://{{ engine_url }}', 'engine_status', 'Status', '{{ engine_url }} : ')">
-        {{ engine_url }} : {{ engine_status }}
-    </button>
+
+    <div class="mt-5">
+        <h3>Testing API connection for : </h3>
+
+        <button id="engine_status"
+                    class="btn btn-secondary"
+                    onclick="getMessage('http://{{ engine_url }}', 'engine_status', 'Status', '{{ engine_url }} : ')">
+                {{ engine_url }} : {{ engine_status }}
+        </button>
+    </div>
+
+    <div class="mt-5">
+        <h3>Convert JSON file into XLSX format : </h3>
+    </div>
 
     <script type="text/javascript" src="{% static 'js/ajax.js' %}"></script>
 
